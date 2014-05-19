@@ -1,0 +1,35 @@
+<%- model_class = Establecimiento -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:codigo_jurisdiccional) %>:</strong></dt>
+  <dd><%= @establecimiento.codigo_jurisdiccional %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cue) %>:</strong></dt>
+  <dd><%= @establecimiento.cue %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:anexo) %>:</strong></dt>
+  <dd><%= @establecimiento.anexo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cue_anexo) %>:</strong></dt>
+  <dd><%= @establecimiento.cue_anexo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sector) %>:</strong></dt>
+  <dd><%= @establecimiento.sector %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ambito) %>:</strong></dt>
+  <dd><%= @establecimiento.ambito %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
+  <dd><%= @establecimiento.nombre %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:localidad_id) %>:</strong></dt>
+  <dd><%= @establecimiento.localidad_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:domicilio) %>:</strong></dt>
+  <dd><%= @establecimiento.domicilio %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              establecimientos_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_establecimiento_path(@establecimiento), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              establecimiento_path(@establecimiento),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

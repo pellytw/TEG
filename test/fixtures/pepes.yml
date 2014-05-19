@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nro: 1
+  nombre: MyString
+  algo: false
+  algo2: MyText
+
+two:
+  nro: 1
+  nombre: MyString
+  algo: false
+  algo2: MyText

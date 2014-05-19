@@ -1,0 +1,17 @@
+<h2>Iniciar Sesión</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div><%= f.label :email %>
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password, "Password" %>
+  <%= f.password_field :password%></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div> Recordarme <%= f.check_box :remember_me %></div>
+  <% end -%>
+  </br>
+  <div><%= f.submit "Iniciar Sesión", :class => "btn-primary" %></div>
+<% end %>
+
+<%= render "links" %>

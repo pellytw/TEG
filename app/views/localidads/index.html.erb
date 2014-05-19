@@ -1,0 +1,58 @@
+<%- model_class = Localidad -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => "Localides" %></h1>
+</div>
+<table id="tabla-localidades" class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:nombre) %></th>
+      <th><%= model_class.human_attribute_name(:region_id) %></th>
+      <th><%= model_class.human_attribute_name(:cp) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @localidads.each do |localidad| %>
+      <tr>
+        <td><%= localidad.nombre %></td>
+        <td><%= localidad.region %></td>
+        <td><%= localidad.cp %></td>
+        <td>
+          <div class="btn-group">
+            <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
+              Acciones
+              <col-md- class="caret"></col-md->
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Ver', localidad %></li>
+              <li><%= link_to 'Editar', edit_localidad_path(localidad)%></li>
+              <li><%= link_to 'Eliminar', localidad, method: :delete, data: { confirm: 'Seguro desea eliminar?' } %></li>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_localidad_path,
+            :class => 'btn btn-primary' %>
+
+
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('#tabla-localidades').dataTable({
+              "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+              "sPaginationType": "bootstrap",
+              "aoColumnDefs": [
+                { "bSearchable": false, "aTargets": [ 3 ] }
+              ],
+              "oLanguage": {
+                    "sUrl": "language.es.json",
+                },
+                "aaSorting": [[ 0, "desc" ]],
+            });
+    });
+</script>

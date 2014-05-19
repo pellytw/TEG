@@ -1,0 +1,64 @@
+<%- model_class = Persona -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nombres) %></th>
+      <th><%= model_class.human_attribute_name(:apellidos) %></th>
+      <th><%= model_class.human_attribute_name(:tipo_documento_id) %></th>
+      <th><%= model_class.human_attribute_name(:nro_documento) %></th>
+      <th><%= model_class.human_attribute_name(:calle) %></th>
+      <th><%= model_class.human_attribute_name(:nro_calle) %></th>
+      <th><%= model_class.human_attribute_name(:piso) %></th>
+      <th><%= model_class.human_attribute_name(:depto) %></th>
+      <th><%= model_class.human_attribute_name(:estado_civil_id) %></th>
+      <th><%= model_class.human_attribute_name(:sexo_id) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_nacimiento) %></th>
+      <th><%= model_class.human_attribute_name(:localidad_id) %></th>
+      <th><%= model_class.human_attribute_name(:situacion_revista_id) %></th>
+      <th><%= model_class.human_attribute_name(:telefono_contacto) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @personas.each do |persona| %>
+      <tr>
+        <td><%= link_to persona.id, persona_path(persona) %></td>
+        <td><%= persona.nombres %></td>
+        <td><%= persona.apellidos %></td>
+        <td><%= persona.tipo_documento_id %></td>
+        <td><%= persona.nro_documento %></td>
+        <td><%= persona.calle %></td>
+        <td><%= persona.nro_calle %></td>
+        <td><%= persona.piso %></td>
+        <td><%= persona.depto %></td>
+        <td><%= persona.estado_civil_id %></td>
+        <td><%= persona.sexo_id %></td>
+        <td><%= persona.fecha_nacimiento %></td>
+        <td><%= persona.localidad_id %></td>
+        <td><%= persona.situacion_revista_id %></td>
+        <td><%= persona.telefono_contacto %></td>
+        <td><%= persona.email %></td>
+        <td><%=l persona.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_persona_path(persona), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      persona_path(persona),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_persona_path,
+            :class => 'btn btn-primary' %>

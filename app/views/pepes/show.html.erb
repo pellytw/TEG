@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h1>pepe</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Nro:</dt>
+  <dd><%= @pepe.nro %></dd>
+
+  <dt>Nombre:</dt>
+  <dd><%= @pepe.nombre %></dd>
+
+  <dt>Algo:</dt>
+  <dd><%= @pepe.algo %></dd>
+
+  <dt>Algo2:</dt>
+  <dd><%= @pepe.algo2 %></dd>
+
+  <br/><br/>
+  <%= link_to pepes_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Atrás
+  <% end %>
+  <%= link_to edit_pepe_path(@pepe), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <%= link_to pepe_path(@pepe), method: :delete, data: { confirm: '¿Seguro desea eliminar?' }, :class => 'btn btn-danger' do%>
+    <span class="glyphicon glyphicon-trash"></span>
+    Eliminar
+  <% end %>
+</dl>

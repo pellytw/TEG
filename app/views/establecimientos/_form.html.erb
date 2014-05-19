@@ -1,0 +1,69 @@
+
+<%= form_for @establecimiento, :html => { :class => 'form-horizontal', :role => "form" } do |f| %>
+  <div class="form-group">
+    <%= f.label :codigo_jurisdiccional, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-6">
+      <%= f.text_field :codigo_jurisdiccional, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cue, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-6">
+      <%= f.text_field :cue, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :anexo, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-6">
+      <%= f.text_field :anexo, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cue_anexo, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-6">
+      <%= f.text_field :cue_anexo, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sector, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-6">
+      <%= f.text_field :sector, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ambito, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-6">
+      <%= f.text_field :ambito, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-6">
+      <%= f.text_field :nombre, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :localidad_id, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-6">
+      <%= f.text_field :localidad_id, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :domicilio, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-6">
+      <%= f.text_field :domicilio, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-6">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            establecimientos_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+  
+  
+ 
+<% end %>

@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%= link_to pepes_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Atrás
+  <% end %>
+  <%= link_to @pepe, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Ver
+  <% end %>
+  <h1>Editando pepe</h1>
+</div>
+
+<%= render 'form' %>

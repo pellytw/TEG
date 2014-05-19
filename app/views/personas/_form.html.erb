@@ -1,0 +1,98 @@
+<%= form_for @persona, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <%= f.label :nombres, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombres, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :apellidos, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :apellidos, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tipo_documento_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :tipo_documento_id, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nro_documento, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :nro_documento, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :calle, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :calle, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nro_calle, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :nro_calle, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :piso, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :piso, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :depto, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :depto, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado_civil_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :estado_civil_id, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sexo_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :sexo_id, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fecha_nacimiento, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :fecha_nacimiento, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :localidad_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :localidad_id, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :situacion_revista_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :situacion_revista_id, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :telefono_contacto, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefono_contacto, :class => 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+  </div>
+
+  
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            personas_path, :class => 'btn btn-default' %>
+ 
+<% end %>
