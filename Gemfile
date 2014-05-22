@@ -16,11 +16,11 @@ gem 'declarative_authorization'
 
 gem 'will_paginate'
 
-gem 'sass-rails',   '~> 3.2.3'
+gem 'sass-rails'#,   '~> 3.2.3'
 
-gem 'coffee-rails', '~> 3.2.1'
+gem 'coffee-rails'#, '~> 3.2.1'
 
-gem 'uglifier', '>= 1.0.3'
+gem 'uglifier'#, '>= 1.0.3'
 
 gem "therubyracer"
 
@@ -30,7 +30,7 @@ gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branc
 
 gem 'bootstrap-generators', :git => 'git://github.com/decioferreira/bootstrap-generators.git'
 
-gem "jquery-rails"
+gem 'jquery-rails', "2.3.0"
 
 gem "jquery-ui-themes"
 
@@ -47,3 +47,7 @@ gem 'execjs'
 gem 'debugger'
 
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+
+gem 'kaminari'
+
+gem 'rails_admin'
