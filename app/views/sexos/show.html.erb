@@ -1,10 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1>sexo</h1>
+</div>
 
-<p>
-  <b>Nombre:</b>
-  <%= @sexo.nombre %>
-</p>
+<dl class="dl-horizontal">
+  <dt>Nombre:</dt>
+  <dd><%= @sexo.nombre %></dd>
 
-
-<%= link_to 'Edit', edit_sexo_path(@sexo) %> |
-<%= link_to 'Back', sexos_path %>
+  <br/><br/>
+  <%= link_to sexos_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Atrás
+  <% end %>
+  <%= link_to edit_sexo_path(@sexo), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <%= link_to sexo_path(@sexo), method: :delete, data: { confirm: '¿Seguro desea eliminar?' }, :class => 'btn btn-danger' do%>
+    <span class="glyphicon glyphicon-trash"></span>
+    Eliminar
+  <% end %>
+</dl>

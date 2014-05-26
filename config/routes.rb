@@ -1,27 +1,23 @@
 Mysecurity::Application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
-  resources :pepes
-
-  resources :posts
-
-  resources :situacion_revista
+  resources :personas
 
   resources :establecimientos
 
-  resources :estado_civils
+  resources :localidads
 
   resources :tipo_documentos
+
+  resources :situacion_revista
 
   resources :sexos
 
   resources :regions
 
-  resources :personas
-
   resources :nivels
 
-  resources :localidads
+  resources :estado_civils
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :role_permissions
 

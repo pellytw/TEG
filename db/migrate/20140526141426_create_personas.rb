@@ -13,6 +13,9 @@ class CreatePersonas < ActiveRecord::Migration
       t.integer :sexo_id
       t.date :fecha_nacimiento
       t.integer :localidad_id
+      t.integer :situacion_revista_id
+      t.string :telefono_contacto
+      t.string :email
 
       t.timestamps
     end

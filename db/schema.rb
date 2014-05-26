@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140521124012) do
+ActiveRecord::Schema.define(:version => 20140526141426) do
 
   create_table "establecimientos", :force => true do |t|
     t.string   "codigo_jurisdiccional"
@@ -47,15 +47,6 @@ ActiveRecord::Schema.define(:version => 20140521124012) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "pepes", :force => true do |t|
-    t.integer  "nro"
-    t.string   "nombre"
-    t.boolean  "algo"
-    t.text     "algo2"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "personas", :force => true do |t|
     t.string   "nombres"
     t.string   "apellidos"
@@ -69,18 +60,11 @@ ActiveRecord::Schema.define(:version => 20140521124012) do
     t.integer  "sexo_id"
     t.date     "fecha_nacimiento"
     t.integer  "localidad_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
     t.integer  "situacion_revista_id"
     t.string   "telefono_contacto"
     t.string   "email"
-  end
-
-  create_table "posts", :force => true do |t|
-    t.text     "body"
-    t.boolean  "published"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|

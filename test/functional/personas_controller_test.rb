@@ -18,7 +18,7 @@ class PersonasControllerTest < ActionController::TestCase
 
   test "should create persona" do
     assert_difference('Persona.count') do
-      post :create, persona: { apellidos: @persona.apellidos, calle: @persona.calle, depto: @persona.depto, estado_civil_id: @persona.estado_civil_id, fecha_nacimiento: @persona.fecha_nacimiento, localidad_id: @persona.localidad_id, nombres: @persona.nombres, nro_calle: @persona.nro_calle, nro_documento: @persona.nro_documento, piso: @persona.piso, sexo_id: @persona.sexo_id, tipo_documento_id: @persona.tipo_documento_id }
+      post :create, persona: { apellidos: @persona.apellidos, calle: @persona.calle, depto: @persona.depto, email: @persona.email, estado_civil_id: @persona.estado_civil_id, fecha_nacimiento: @persona.fecha_nacimiento, localidad_id: @persona.localidad_id, nombres: @persona.nombres, nro_calle: @persona.nro_calle, nro_documento: @persona.nro_documento, piso: @persona.piso, sexo_id: @persona.sexo_id, situacion_revista_id: @persona.situacion_revista_id, telefono_contacto: @persona.telefono_contacto, tipo_documento_id: @persona.tipo_documento_id }
     end
 
     assert_redirected_to persona_path(assigns(:persona))
@@ -35,7 +35,7 @@ class PersonasControllerTest < ActionController::TestCase
   end
 
   test "should update persona" do
-    put :update, id: @persona, persona: { apellidos: @persona.apellidos, calle: @persona.calle, depto: @persona.depto, estado_civil_id: @persona.estado_civil_id, fecha_nacimiento: @persona.fecha_nacimiento, localidad_id: @persona.localidad_id, nombres: @persona.nombres, nro_calle: @persona.nro_calle, nro_documento: @persona.nro_documento, piso: @persona.piso, sexo_id: @persona.sexo_id, tipo_documento_id: @persona.tipo_documento_id }
+    put :update, id: @persona, persona: { apellidos: @persona.apellidos, calle: @persona.calle, depto: @persona.depto, email: @persona.email, estado_civil_id: @persona.estado_civil_id, fecha_nacimiento: @persona.fecha_nacimiento, localidad_id: @persona.localidad_id, nombres: @persona.nombres, nro_calle: @persona.nro_calle, nro_documento: @persona.nro_documento, piso: @persona.piso, sexo_id: @persona.sexo_id, situacion_revista_id: @persona.situacion_revista_id, telefono_contacto: @persona.telefono_contacto, tipo_documento_id: @persona.tipo_documento_id }
     assert_redirected_to persona_path(assigns(:persona))
   end
 

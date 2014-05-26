@@ -1,34 +1,54 @@
-<%- model_class = SituacionRevistum -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <%= link_to new_situacion_revistum_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    Nuevo Situacion revistum
+  <% end %>
+  <h1>Listado de situaciones de revista</h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nombre) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @situacion_revista.each do |situacion_revistum| %>
-      <tr>
-        <td><%= link_to situacion_revistum.id, situacion_revistum_path(situacion_revistum) %></td>
-        <td><%= situacion_revistum.nombre %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_situacion_revistum_path(situacion_revistum), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      situacion_revistum_path(situacion_revistum),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_situacion_revistum_path,
-            :class => 'btn btn-primary' %>
+<div class="table-responsive">
+  <table id="tabla-situacion_revistum" class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Nombre</th>
+            <th class="text-center">Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @situacion_revista) do |situacion_revistum| %>
+            <td><%= situacion_revistum.nombre %></td>
+            <td class="text-center">
+          <div class="btn-group">
+            <a class="btn dropdown-toggle btn-primary" data-toggle="dropdown" href="#">
+              Acciones
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Ver', situacion_revistum %></li>
+              <li><%= link_to 'Editar', edit_situacion_revistum_path(situacion_revistum) %></li>
+              <li><%= link_to 'Eliminar', situacion_revistum, method: :delete, data: { confirm: '¿Seguro desea eliminar?' } %></li>
+              </li>
+            </ul>
+          </div>
+        </td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function($) {
+      var cantidad = $("table > tbody").find("> tr:first > td").length - 1;
+      var pepe = $('#tabla-situacion_revistum').dataTable({
+        "sPaginationType": "bootstrap",
+        "aoColumnDefs": [
+          { "bSearchable": false, "aTargets": [ cantidad ] }
+        ],
+        "oLanguage": {
+              "sUrl": "language.es.json",
+          },
+        "aaSorting": [[ 0, "desc" ]],
+      });
+    });
+</script>

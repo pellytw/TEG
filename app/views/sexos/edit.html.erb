@@ -1,6 +1,13 @@
-<h1>Editing sexo</h1>
+<div class="page-header">
+  <%= link_to sexos_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Atrás
+  <% end %>
+  <%= link_to @sexo, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Ver
+  <% end %>
+  <h1>Editando sexo</h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @sexo %> |
-<%= link_to 'Back', sexos_path %>
