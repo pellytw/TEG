@@ -40,7 +40,6 @@ class LocalidadsController < ApplicationController
   # POST /localidads
   # POST /localidads.json
   def create
-    debugger
     @localidad = Localidad.new(params[:localidad])
 
     respond_to do |format|
