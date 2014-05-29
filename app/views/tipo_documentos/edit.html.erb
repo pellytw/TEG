@@ -1,6 +1,13 @@
-<%- model_class = TipoDocumento -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
-                                   :default => "Edit #{model_class.model_name.human}") %></h1>
+  <%= link_to tipo_documentos_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Atrás
+  <% end %>
+  <%= link_to @tipo_documento, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Ver
+  <% end %>
+  <h1>Editando tipo_documento</h1>
 </div>
-<%= render :partial => 'form' %>
+
+<%= render 'form' %>

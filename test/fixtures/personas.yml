@@ -11,8 +11,11 @@ one:
   depto: MyString
   estado_civil_id: 1
   sexo_id: 1
-  fecha_nacimiento: 2014-04-29
+  fecha_nacimiento: 2014-05-26
   localidad_id: 1
+  situacion_revista_id: 1
+  telefono_contacto: MyString
+  email: MyString
 
 two:
   nombres: MyString
@@ -25,5 +28,8 @@ two:
   depto: MyString
   estado_civil_id: 1
   sexo_id: 1
-  fecha_nacimiento: 2014-04-29
+  fecha_nacimiento: 2014-05-26
   localidad_id: 1
+  situacion_revista_id: 1
+  telefono_contacto: MyString
+  email: MyString
