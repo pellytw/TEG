@@ -19,4 +19,12 @@ class User < ActiveRecord::Base
     return !!self.roles.find_by_description(role.to_s.camelize)
   end
 
+  after_create :default_role
+
+  private 
+  def default_role    
+    UserRole.create(:user_id => self.id, :role_id => Role.where(:description => 'User').first.id)
+  end
+
 end
+
