@@ -4,9 +4,6 @@ class RolePermissionsController < ApplicationController
   load_and_authorize_resource
   # GET /role_permissions
   # GET /role_permissions.json
-
-
-
   def index
     index_helper
 
