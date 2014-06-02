@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140526141426) do
+ActiveRecord::Schema.define(:version => 20140602130714) do
 
   create_table "establecimientos", :force => true do |t|
     t.string   "codigo_jurisdiccional"
@@ -63,8 +63,22 @@ ActiveRecord::Schema.define(:version => 20140526141426) do
     t.integer  "situacion_revista_id"
     t.string   "telefono_contacto"
     t.string   "email"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.integer  "establecimiento_id"
+    t.integer  "tipo_gestion_id"
+    t.string   "servicio_transporte"
+    t.string   "rol"
+    t.integer  "grado_anio_alumno"
+    t.boolean  "regular"
+    t.boolean  "activo_pasivo_docente"
+    t.boolean  "frente_alumnos"
+    t.string   "grado_docente"
+    t.string   "turno_docente"
+    t.boolean  "activo_pasivo_aux"
+    t.string   "lugar_auxiliares"
+    t.integer  "cant_cuadras"
+    t.float    "distancia_km"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -120,6 +134,12 @@ ActiveRecord::Schema.define(:version => 20140526141426) do
   end
 
   create_table "tipo_documentos", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tipo_gestions", :force => true do |t|
     t.string   "nombre"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
