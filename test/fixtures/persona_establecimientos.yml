@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  persona_id: 1
+  establecimiento_id: 1
+
+two:
+  persona_id: 1
+  establecimiento_id: 1

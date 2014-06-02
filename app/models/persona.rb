@@ -9,9 +9,22 @@ class Persona < ActiveRecord::Base
   belongs_to :situacion_revistum
   belongs_to :tipo_documento
   belongs_to :tipo_gestion
-  belongs_to :establecimiento
-  
+
   def to_s
-  	"#{ self.nombres } + #{apellidos}"
+  	"#{ self.nombres } + #{ self.apellidos }"
   end
+
+  attr_accessible :persona_establecimientos_attributes
+  attr_accessible :persona_attributes
+
+  attr_accessible :establecimiento_tokens
+  has_many :persona_establecimiento, :dependent => :destroy
+  has_many :establecimientos, :through => :persona_establecimiento
+  attr_reader :establecimiento_tokens
+
+
+  def establecimiento_tokens=(ids)
+    self.establecimiento_ids = ids.split(",")
+  end
+
 end

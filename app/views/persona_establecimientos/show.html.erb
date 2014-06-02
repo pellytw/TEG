@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h1>persona_establecimiento</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Persona:</dt>
+  <dd><%= @persona_establecimiento.persona_id %></dd>
+
+  <dt>Establecimiento:</dt>
+  <dd><%= @persona_establecimiento.establecimiento_id %></dd>
+
+  <br/><br/>
+  <%= link_to persona_establecimientos_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Atrás
+  <% end %>
+  <%= link_to edit_persona_establecimiento_path(@persona_establecimiento), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <%= link_to persona_establecimiento_path(@persona_establecimiento), method: :delete, data: { confirm: '¿Seguro desea eliminar?' }, :class => 'btn btn-danger' do%>
+    <span class="glyphicon glyphicon-trash"></span>
+    Eliminar
+  <% end %>
+</dl>

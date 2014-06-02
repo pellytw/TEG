@@ -1,4 +1,6 @@
 Mysecurity::Application.routes.draw do
+  resources :persona_establecimientos
+
   resources :tipo_gestions
 
   resources :personas
