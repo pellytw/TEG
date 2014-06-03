@@ -1,3 +1,4 @@
+
 <%= form_for(@persona, :html => { :class => "form-horizontal" }) do |f| %>
   <% if @persona.errors.any? %>
     <div class="alert alert-danger alert-dismissable">
@@ -77,16 +78,14 @@
   </div>
   <div class="form-group">
     <%= f.label :fecha_nacimiento, :class => "col-sm-2 control-label" %>
-    <div class="col-sm-10">
-      <%= f.date_select :fecha_nacimiento, :class => "form-control" %>
+    <div class="col-sm-4">
+      <%= f.datepicker :fecha_nacimiento, :id => "datepicker", :class => "form-control" %>
     </div>
-  </div> 
-  <div class="form-group">
     <%= f.label :telefono_contacto, "Teléfono de contacto", :class => "col-sm-2 control-label" %>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
       <%= f.text_field :telefono_contacto, :class => "form-control" %>
     </div>
-  </div>
+  </div> 
   <div class="form-group">
     <%= f.label :email, "Correo electrónico", :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
@@ -122,33 +121,31 @@
     <%= f.label :rol, "Condición", :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
        <select name="persona[rol]" id="persona_rol">
-            <% @tipo_roles.each do |tp| %>
-              <% if @persona.rol == tp %>
-                <option selected="selected" value="<%=tp%>"><%=tp%></option>
-              <% else %>
-                <option value="<%=tp%>"><%=tp%></option>
-              <% end %>
+          <% @tipo_roles.each do |tp| %>
+            <% if @persona.rol == tp %>
+              <option selected="selected" value="<%=tp%>"><%=tp%></option>
+            <% else %>
+              <option value="<%=tp%>"><%=tp%></option>
             <% end %>
+          <% end %>
         </select>
     </div>
   </div>
 
-  </br>
   <fieldset id="alumno">
     <legend>Alumno</legend>
     <div class="form-group">
       <%= f.label :grado_anio_alumno, "Grado/Año", :class => "col-sm-2 control-label" %>
       <div class="col-sm-4">
-        <%= f.text_field :grado_anio_alumno, :class => "form-control" %>
+        <%= f.text_field :grado_anio_alumno, :id => "input_grado_anio_alumno", :class => "form-control" %>
       </div>
       <%= f.label :regular, "Marque si es alumno regular", :class => "col-sm-2 control-label" %>
       <div class="col-sm-4">
-        <%= f.check_box :regular %>
+        <%= f.check_box :regular, :id => "check_alumno_regular" %>
       </div>
     </div>    
   </fieldset>
 
-  </br>   
   <fieldset id="docente">
     <legend>Docente</legend>
     <div class="form-group">
@@ -156,34 +153,53 @@
       <div class="col-sm-4">
         <%= f.check_box :activo_pasivo_docente, :id => "check_activo_pasivo_docente" %>
       </div>
-      <%= f.label :frente_alumnos, "Marque si cumple su función frente a grupo de alumnos", :class => "col-sm-2 control-label" %>
-      <div class="col-sm-4">
-        <%= f.check_box :frente_alumnos, :id => "check_frente_alumnos" %>
-      </div>
+      <fieldset id="docente_activo">  
+        <%= f.label :frente_alumnos, "Marque si cumple su función frente a grupo de alumnos", :class => "col-sm-4 control-label" %>
+        <div class="col-sm-2">
+          <%= f.check_box :frente_alumnos, :id => "check_frente_alumnos" %>
+        </div>
+      </fieldset>
     </div>
-    <div class="form-group">
-      <%= f.label :grado_docente, "Grado", :class => "col-sm-2 control-label" %>
-      <div class="col-sm-4">
-        <%= f.text_field :grado_docente, :id => "input_grado_docente", :class => "form-control" %>
+    <fieldset id="frente_alumno">
+      <div class="form-group">
+        <%= f.label :grado_docente, "Grado", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :grado_docente, :id => "input_grado_docente", :class => "form-control" %>
+        </div>
+        <%= f.label :turno_docente, "Turno", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :turno_docente, :id => "input_turno_docente", :class => "form-control" %>
+        </div>
       </div>
-      <%= f.label :turno_docente, "Turno", :class => "col-sm-2 control-label" %>
-      <div class="col-sm-4">
-        <%= f.text_field :turno_docente, :id => "input_turno_docente", :class => "form-control" %>
-      </div>
-    </div>
+    </fieldset>
   </fieldset>
 
-  </br>
-  <fieldset id="auxiliar">
+  <fieldset id="aux">
     <legend>Auxiliar de educación</legend>
     <div class="form-group">
       <%= f.label :activo_pasivo_aux, "Marque si es auxiliar activo", :class => "col-sm-2 control-label" %>
       <div class="col-sm-4">
         <%= f.check_box :activo_pasivo_aux, :id => "check_activo_pasivo_aux" %>
       </div>
-      <%= f.label :lugar_auxiliares, "Lugar donde cumple su función", :class => "col-sm-2 control-label" %>
+      <fieldset id="aux_activo">
+        <%= f.label :lugar_auxiliares, "Lugar donde cumple su función", :class => "col-sm-4 control-label" %>
+        <div class="col-sm-8">
+          <%= f.text_field :lugar_auxiliares, :id => "input_lugar_auxiliares", :class => "form-control" %>
+        </div>
+      </fieldset>
+    </div>
+  </fieldset>
+
+  <fieldset id="cuadras">
+    <legend>Distancia al establecimiento</legend>
+    <div class="form-group">
+      <%= f.label :cant_cuadras, "Cantidad de cuadras al establecimiento", :class => "col-sm-2 control-label" %>
       <div class="col-sm-4">
-        <%= f.text_field :lugar_auxiliares, :id => "input_lugar_auxiliares", :class => "form-control" %>
+        <%= f.text_field :cant_cuadras, :id => "input_cant_cuadras", :class => "form-control" %>
+      </div>
+      <%= f.label :distancia_km, "Cantidad de kilómetros al establecimiento", :class => "col-sm-2 control-label" %>
+      <div class="col-sm-4">
+        <%= f.text_field :distancia_km, :id => "input_distancia_km", :class => "form-control" %>
       </div>
     </div>
   </fieldset>
@@ -200,4 +216,220 @@
       <% end %>
     </div>
   </div>
+<% end %>
+
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+    $("#alumno").addClass('hidden');
+    $("#docente").addClass('hidden');
+    $("#aux").addClass('hidden');
+    $("#regular").addClass('hidden');
+    $("#docente_activo").addClass('hidden');
+    $("#aux_activo").addClass('hidden');
+    $("#frente_alumno").addClass('hidden');    
+    $("#cuadras").addClass('hidden');
+
+    // ToolTip
+    $('#persona_calle').tooltip();
+
+    
+    //$( "#foo" ).trigger( "click" );
+
+    $( "#persona_rol" ).change(function() {
+      if ($( "#persona_rol option:selected" ).text() == "Alumno"){
+
+      if ($("#check_alumno_regular").attr("checked") == "checked"){
+        $("#cuadras").removeClass('hidden');
+      } else {
+        $("#cuadras").addClass('hidden');
+      }
+
+
+        //habilito todo lo de alumno
+        $("#alumno").removeClass('hidden');
+
+        //acá oculto todo lo de aux
+        $("#aux").addClass('hidden');
+        $("#aux_activo").addClass('hidden');
+        //$("#input_cant_cuadras_aux").val(""); 
+        //$("#input_distancia_km_aux").val("");
+        $("#check_activo_pasivo_aux").prop("checked",false);
+        $("#input_lugar_auxiliares").val("");
+
+        //acá oculto todo lo de docente
+        $("#docente").addClass('hidden');
+        $("#docente_activo").addClass('hidden');
+        $("#frente_alumno").addClass('hidden');
+
+        $("#input_cant_cuadras").val(""); 
+        $("#input_distancia_km").val("");
+        $("#check_activo_pasivo_docente").prop("checked",false);
+        $("#check_frente_alumnos").prop("checked",false);
+        $("#input_grado_docente").val("");
+        $("#input_turno_docente").val("");
+
+      };
+      if ($( "#persona_rol option:selected" ).text() == "Docente"){
+
+        if ($("#check_activo_pasivo_docente").attr("checked") == "checked"){
+          $("#docente_activo").removeClass('hidden');
+        } else {
+          $("#docente_activo").addClass('hidden');
+        }
+
+      
+        if ($("#check_frente_alumnos").attr("checked") == "checked"){
+          $("#frente_alumno").removeClass('hidden');
+        } else {
+          $("#frente_alumno").addClass('hidden');
+        }
+  
+
+        //habilito todo lo de docente
+        $("#docente").removeClass('hidden');
+        $("#cuadras").removeClass('hidden');
+
+        //acá oculto todo lo de alumno
+        $("#alumno").addClass('hidden');        
+        $("#regular").addClass('hidden');
+        
+        $("#input_grado_anio_alumno").val("");
+        $("#check_alumno_regular").prop("checked",false);
+        //$("#input_cant_cuadras").val(""); 
+        //$("#input_distancia_km").val("");
+
+        //acá oculto todo lo de aux
+        $("#aux").addClass('hidden');
+        $("#aux_activo").addClass('hidden');
+        $("#input_cant_cuadras_aux").val(""); 
+        $("#input_distancia_km_aux").val("");
+        $("#check_activo_pasivo_aux").prop("checked",false);
+        $("#input_lugar_auxiliares").val("");
+               
+        
+      };
+      if ($( "#persona_rol option:selected" ).text() == "Auxiliar de educación"){
+
+      if ($("#check_activo_pasivo_aux").attr("checked") == "checked"){
+        $("#aux_activo").removeClass('hidden');
+      } else {
+        $("#aux_activo").addClass('hidden');
+      }
+
+
+        //habilito todo lo de aux
+        $("#aux").removeClass('hidden');
+        $("#cuadras").removeClass('hidden');    
+        
+        //acá oculto todo lo de alumno
+        $("#alumno").addClass('hidden');        
+        $("#regular").addClass('hidden');
+        
+        $("#input_grado_anio_alumno").val("");
+        $("#check_alumno_regular").prop("checked",false);
+        //$("#input_cant_cuadras").val(""); 
+        //$("#input_distancia_km").val("");
+
+        //acá oculto todo lo de docente
+        $("#docente").addClass('hidden');
+        $("#docente_activo").addClass('hidden');
+        $("#frente_alumno").addClass('hidden');
+
+        $("#input_cant_cuadras").val(""); 
+        $("#input_distancia_km").val("");
+        $("#check_activo_pasivo_docente").prop("checked",false);
+        $("#check_frente_alumnos").prop("checked",false);
+        $("#input_grado_docente").val("");
+        $("#input_turno_docente").val("");
+      };
+      if ($( "#persona_rol option:selected" ).text() == "Seleccione una función"){
+        //acá oculto todo lo de aux
+        $("#aux").addClass('hidden');
+        $("#aux_activo").addClass('hidden');
+        //$("#input_cant_cuadras_aux").val(""); 
+        //$("#input_distancia_km_aux").val("");
+        $("#check_activo_pasivo_aux").prop("checked",false);
+        $("#input_lugar_auxiliares").val("");
+        
+        //acá oculto todo lo de alumno
+        $("#alumno").addClass('hidden');        
+        $("#regular").addClass('hidden');
+        $("#cuadras").addClass('hidden');
+        
+        $("#input_grado_anio_alumno").val("");
+        $("#check_alumno_regular").prop("checked",false);
+        //$("#input_cant_cuadras").val(""); 
+        //$("#input_distancia_km").val("");
+
+        //acá oculto todo lo de docente
+        $("#docente").addClass('hidden');
+        $("#docente_activo").addClass('hidden');
+        $("#frente_alumno").addClass('hidden');
+
+        $("#input_cant_cuadras").val(""); 
+        $("#input_distancia_km").val("");
+        $("#check_activo_pasivo_docente").prop("checked",false);
+        $("#check_frente_alumnos").prop("checked",false);
+        $("#input_grado_docente").val("");
+        $("#input_turno_docente").val("");
+      };
+    });
+
+    $("#persona_rol").trigger("change");
+
+    $("#check_alumno_regular").click(function(){
+      if ($(this).attr("checked") == "checked"){
+        $("#regular").removeClass('hidden');
+        $("#cuadras").removeClass('hidden');
+      } else {
+        $("#regular").addClass('hidden');
+        $("#cuadras").addClass('hidden');
+      }
+    });
+    $("#check_activo_pasivo_docente").click(function(){
+      if ($(this).attr("checked") == "checked"){
+        $("#docente_activo").removeClass('hidden');
+      } else {
+        $("#docente_activo").addClass('hidden');
+      }
+    });
+    $("#check_frente_alumnos").click(function(){
+      if ($(this).attr("checked") == "checked"){
+        $("#frente_alumno").removeClass('hidden');
+      } else {
+        $("#frente_alumno").addClass('hidden');
+      }
+    });
+    $("#check_activo_pasivo_aux").click(function(){
+      if ($(this).attr("checked") == "checked"){
+        $("#aux_activo").removeClass('hidden');
+      } else {
+        $("#aux_activo").addClass('hidden');
+      }
+    });
+
+  });
+</script>
+
+<% @listado_de_datepickers = ['datepicker', 'datepicker2'] %>
+
+<% @listado_de_datepickers.each do |l| %>
+
+    <script type="text/javascript">
+        
+          $("#<%=l%>").datepicker({dateFormat:"dd-mm-yy",
+          dayNamesMin: ["Do", "Lu", "Ma", "Mie", "Jue", "Vie", "Sa"],
+          changeYear: true,
+          yearRange: "1910:<%= Date.today.year + 10 %>", 
+          monthNames: ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"], 
+          monthNamesShort: ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"], 
+          navigationAsDateFormat: true,
+          nextText: "Sig", 
+          prevText: "Ant", 
+          showAnim: "explode"
+            });
+
+    </script>
+
 <% end %>
