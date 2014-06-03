@@ -44,7 +44,7 @@ class TipoGestionsController < ApplicationController
 
     respond_to do |format|
       if @tipo_gestion.save
-        format.html { redirect_to @tipo_gestion, notice: 'Tipo gestion was successfully created.' }
+        format.html { redirect_to @tipo_gestion, notice: 'Tipo gestion se ha creado correctamente.' }
         format.json { render json: @tipo_gestion, status: :created, location: @tipo_gestion }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class TipoGestionsController < ApplicationController
 
     respond_to do |format|
       if @tipo_gestion.update_attributes(params[:tipo_gestion])
-        format.html { redirect_to @tipo_gestion, notice: 'Tipo gestion was successfully updated.' }
+        format.html { redirect_to @tipo_gestion, notice: 'Tipo gestion se ha actualizado correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

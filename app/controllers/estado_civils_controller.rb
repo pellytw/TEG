@@ -46,7 +46,7 @@ class EstadoCivilsController < ApplicationController
 
     respond_to do |format|
       if @estado_civil.save
-        format.html { redirect_to @estado_civil, notice: 'Estado civil was successfully created.' }
+        format.html { redirect_to @estado_civil, notice: 'Estado civil se ha creado correctamente.' }
         format.json { render json: @estado_civil, status: :created, location: @estado_civil }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class EstadoCivilsController < ApplicationController
 
     respond_to do |format|
       if @estado_civil.update_attributes(params[:estado_civil])
-        format.html { redirect_to @estado_civil, notice: 'Estado civil was successfully updated.' }
+        format.html { redirect_to @estado_civil, notice: 'Estado civil se ha actualizado correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

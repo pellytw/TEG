@@ -46,7 +46,7 @@ class LocalidadsController < ApplicationController
 
     respond_to do |format|
       if @localidad.save
-        format.html { redirect_to @localidad, notice: 'Localidad was successfully created.' }
+        format.html { redirect_to @localidad, notice: 'Localidad se ha creado correctamente.' }
         format.json { render json: @localidad, status: :created, location: @localidad }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class LocalidadsController < ApplicationController
 
     respond_to do |format|
       if @localidad.update_attributes(params[:localidad])
-        format.html { redirect_to @localidad, notice: 'Localidad was successfully updated.' }
+        format.html { redirect_to @localidad, notice: 'Localidad se ha actualizado correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

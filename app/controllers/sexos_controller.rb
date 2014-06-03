@@ -46,7 +46,7 @@ class SexosController < ApplicationController
 
     respond_to do |format|
       if @sexo.save
-        format.html { redirect_to @sexo, notice: 'Sexo was successfully created.' }
+        format.html { redirect_to @sexo, notice: 'Sexo se ha creado correctamente.' }
         format.json { render json: @sexo, status: :created, location: @sexo }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class SexosController < ApplicationController
 
     respond_to do |format|
       if @sexo.update_attributes(params[:sexo])
-        format.html { redirect_to @sexo, notice: 'Sexo was successfully updated.' }
+        format.html { redirect_to @sexo, notice: 'Sexo se ha actualizado correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

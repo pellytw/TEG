@@ -46,7 +46,7 @@ class NivelsController < ApplicationController
 
     respond_to do |format|
       if @nivel.save
-        format.html { redirect_to @nivel, notice: 'Nivel was successfully created.' }
+        format.html { redirect_to @nivel, notice: 'Nivel se ha creado correctamente.' }
         format.json { render json: @nivel, status: :created, location: @nivel }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class NivelsController < ApplicationController
 
     respond_to do |format|
       if @nivel.update_attributes(params[:nivel])
-        format.html { redirect_to @nivel, notice: 'Nivel was successfully updated.' }
+        format.html { redirect_to @nivel, notice: 'Nivel se ha actualizado correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

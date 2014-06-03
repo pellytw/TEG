@@ -44,7 +44,7 @@ class PersonaEstablecimientosController < ApplicationController
 
     respond_to do |format|
       if @persona_establecimiento.save
-        format.html { redirect_to @persona_establecimiento, notice: 'Persona establecimiento was successfully created.' }
+        format.html { redirect_to @persona_establecimiento, notice: 'Persona establecimiento se ha creado correctamente.' }
         format.json { render json: @persona_establecimiento, status: :created, location: @persona_establecimiento }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class PersonaEstablecimientosController < ApplicationController
 
     respond_to do |format|
       if @persona_establecimiento.update_attributes(params[:persona_establecimiento])
-        format.html { redirect_to @persona_establecimiento, notice: 'Persona establecimiento was successfully updated.' }
+        format.html { redirect_to @persona_establecimiento, notice: 'Persona establecimiento se ha actualizado correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
