@@ -1,8 +1,4 @@
 <div class="page-header">
-  <%= link_to new_persona_path, :class => 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-plus"></span>
-    Nuevo Persona
-  <% end %>
   <h1>Listado de personas</h1>
 </div>
 
@@ -30,7 +26,7 @@
             <td><%= persona.nro_documento %></td>
             <td><%= persona.estado_civil %></td>
             <td><%= persona.sexo%></td>
-            <td><%= persona.fecha_nacimiento %></td>
+            <td><%= Util.fecha_a_es(persona.fecha_nacimiento) %></td>
             <td><%= persona.localidad %></td>
             <td><%= persona.telefono_contacto %></td>
             <td><%= persona.email %></td>

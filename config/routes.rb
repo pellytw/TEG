@@ -90,6 +90,6 @@ Mysecurity::Application.routes.draw do
   #
   #
 
-  root :to => "establecimientos#index"
+  root :to => "personas#new"
 
 end

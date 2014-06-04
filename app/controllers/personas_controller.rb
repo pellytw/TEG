@@ -43,16 +43,26 @@ class PersonasController < ApplicationController
   # POST /personas.json
   def create
     @persona = Persona.new(params[:persona])
-
-    respond_to do |format|
-      if @persona.save
-        format.html { redirect_to @persona, notice: 'Persona se ha creado correctamente.' }
-        format.json { render json: @persona, status: :created, location: @persona }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @persona.errors, status: :unprocessable_entity }
+    #acá vemos si el usuario puede registrarse en el boleto. Para eso debe tener el rol user
+    if (current_user.role? :user) then
+      @persona.user_id = current_user.id
+      respond_to do |format|
+        if @persona.save
+          format.html { redirect_to @persona, notice: 'Se ha registrado correctamente.' }
+          format.json { render json: @persona, status: :created, location: @persona }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @persona.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to "/personas", alert: 'No tiene permisos para registrarse.' }
+        format.json { head :no_content }
       end
     end
+
+    
   end
 
   # PUT /personas/1

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140602130714) do
+ActiveRecord::Schema.define(:version => 20140604121656) do
 
   create_table "establecimientos", :force => true do |t|
     t.string   "codigo_jurisdiccional"
@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(:version => 20140602130714) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "persona_establecimientos", :force => true do |t|
+    t.integer  "persona_id"
+    t.integer  "establecimiento_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
   create_table "personas", :force => true do |t|
     t.string   "nombres"
     t.string   "apellidos"
@@ -79,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20140602130714) do
     t.string   "lugar_auxiliares"
     t.integer  "cant_cuadras"
     t.float    "distancia_km"
+    t.integer  "user_id"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
