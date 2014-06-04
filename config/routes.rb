@@ -1,4 +1,6 @@
 Mysecurity::Application.routes.draw do
+  get "pagina_inicio/index"
+
   resources :persona_establecimientos
 
   resources :tipo_gestions
@@ -90,6 +92,6 @@ Mysecurity::Application.routes.draw do
   #
   #
 
-  root :to => "personas#new"
+  root :to => "pagina_inicio#index"
 
 end

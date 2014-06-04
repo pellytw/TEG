@@ -13,7 +13,9 @@ class Ability
 	      #user2.try(:id) == user.id
 	      #end    
 	    elsif user.role? :user
-	      can :manage, [Establecimiento]
+	      can :create, [Persona]
+	      can :update, [Persona]
+	      can :read, [Persona]
 	    end    
     end    
     #can :create, [Persona]
