@@ -210,20 +210,24 @@
 
   <br/></br></br>
 
-
-  
-  <%= link_to personas_path, :class => 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Atrás
-  <% end %>
-  <%= link_to edit_persona_path(@persona), :class => 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Editar
-  <% end %>
-  <%= link_to persona_path(@persona), method: :delete, data: { confirm: '¿Seguro desea eliminar?' }, :class => 'btn btn-danger' do%>
-    <span class="glyphicon glyphicon-trash"></span>
-    Eliminar
-  <% end %>
+  <div class="hidden-print">
+    <%= link_to personas_path, :class => 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-list-alt"></span>
+      Atrás
+    <% end %>&nbsp;
+    <%= link_to edit_persona_path(@persona), :class => 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      Editar
+    <% end %>&nbsp;
+    <%= link_to persona_path(@persona), method: :delete, data: { confirm: '¿Seguro desea eliminar?' }, :class => 'btn btn-danger' do%>
+      <span class="glyphicon glyphicon-trash"></span>
+      Eliminar
+    <% end %>&nbsp;
+    <%= link_to "#", onclick: "window.print()", :class => 'btn btn-lila' do%>
+      <span class="glyphicon glyphicon-print"></span>
+      Imprimir
+    <% end %>&nbsp;
+  </div>
 </dl>
 
 
