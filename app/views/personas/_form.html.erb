@@ -204,9 +204,13 @@
     </div>
   </fieldset>
 
+  <fieldset id="recorrido">
+    <legend>Recorrido</legend>
+  </fieldset>
+
   </br></br></br>
   <div class="form-group">
-    <div class="text-center">
+    <div class="col-sm-offset-2 col-sm-10">
       <%= f.submit :class => "btn btn-primary", :value => "Guardar" %>
       <%= link_to personas_path, :class => 'btn btn-default' do %>
         <span class="glyphicon glyphicon-list-alt"></span>
