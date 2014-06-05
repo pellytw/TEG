@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  persona_id: 1
+  localidad_origen_id: 1
+  localidad_destino_id: 1
+  empresa_transporte_id: 1
+  lunes_cant: 1
+  martes_cant: 1
+  miercoles_cant: 1
+  jueves_cant: 1
+  viernes_cant: 1
+  sabado_cant: 1
+  domingo_cant: 1
+
+two:
+  persona_id: 1
+  localidad_origen_id: 1
+  localidad_destino_id: 1
+  empresa_transporte_id: 1
+  lunes_cant: 1
+  martes_cant: 1
+  miercoles_cant: 1
+  jueves_cant: 1
+  viernes_cant: 1
+  sabado_cant: 1
+  domingo_cant: 1

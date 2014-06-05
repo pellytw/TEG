@@ -1,4 +1,8 @@
 Mysecurity::Application.routes.draw do
+  resources :tramos
+
+  resources :empresa_transportes
+
   get "pagina_inicio/index"
 
   resources :persona_establecimientos

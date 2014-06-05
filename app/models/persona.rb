@@ -13,6 +13,10 @@ class Persona < ActiveRecord::Base
   belongs_to :tipo_documento
   belongs_to :tipo_gestion
 
+  has_many :tramo, :dependent => :destroy
+  attr_accessible :tramo_attributes
+  accepts_nested_attributes_for :tramo, allow_destroy: true
+
   def to_s
   	"#{ self.nombres } + #{ self.apellidos }"
   end

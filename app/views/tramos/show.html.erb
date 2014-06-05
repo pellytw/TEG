@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h1>tramo</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Persona:</dt>
+  <dd><%= @tramo.persona_id %></dd>
+
+  <dt>Localidad origen:</dt>
+  <dd><%= @tramo.localidad_origen_id %></dd>
+
+  <dt>Localidad destino:</dt>
+  <dd><%= @tramo.localidad_destino_id %></dd>
+
+  <dt>Empresa transporte:</dt>
+  <dd><%= @tramo.empresa_transporte_id %></dd>
+
+  <dt>Lunes cant:</dt>
+  <dd><%= @tramo.lunes_cant %></dd>
+
+  <dt>Martes cant:</dt>
+  <dd><%= @tramo.martes_cant %></dd>
+
+  <dt>Miercoles cant:</dt>
+  <dd><%= @tramo.miercoles_cant %></dd>
+
+  <dt>Jueves cant:</dt>
+  <dd><%= @tramo.jueves_cant %></dd>
+
+  <dt>Viernes cant:</dt>
+  <dd><%= @tramo.viernes_cant %></dd>
+
+  <dt>Sabado cant:</dt>
+  <dd><%= @tramo.sabado_cant %></dd>
+
+  <dt>Domingo cant:</dt>
+  <dd><%= @tramo.domingo_cant %></dd>
+
+  <br/><br/>
+  <%= link_to tramos_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Atrás
+  <% end %>
+  <%= link_to edit_tramo_path(@tramo), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <%= link_to tramo_path(@tramo), method: :delete, data: { confirm: '¿Seguro desea eliminar?' }, :class => 'btn btn-danger' do%>
+    <span class="glyphicon glyphicon-trash"></span>
+    Eliminar
+  <% end %>
+</dl>

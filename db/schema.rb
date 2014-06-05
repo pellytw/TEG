@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140604121656) do
+ActiveRecord::Schema.define(:version => 20140605174855) do
+
+  create_table "empresa_transportes", :force => true do |t|
+    t.string   "nombre"
+    t.integer  "localidad_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "establecimientos", :force => true do |t|
     t.string   "codigo_jurisdiccional"
@@ -151,6 +158,22 @@ ActiveRecord::Schema.define(:version => 20140604121656) do
     t.string   "nombre"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tramos", :force => true do |t|
+    t.integer  "persona_id"
+    t.integer  "localidad_origen_id"
+    t.integer  "localidad_destino_id"
+    t.integer  "empresa_transporte_id"
+    t.integer  "lunes_cant"
+    t.integer  "martes_cant"
+    t.integer  "miercoles_cant"
+    t.integer  "jueves_cant"
+    t.integer  "viernes_cant"
+    t.integer  "sabado_cant"
+    t.integer  "domingo_cant"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "user_roles", :force => true do |t|
