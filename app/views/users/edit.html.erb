@@ -1,6 +1,14 @@
-<h1>Editando usuario</h1>
+
+<div class="page-header">
+  <%= link_to users_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Atrás
+  <% end %>
+  <%= link_to @user, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Ver
+  <% end %>
+  <h1>Editando user</h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Ver', @user %> |
-<%= link_to 'Atrás', users_path %>
