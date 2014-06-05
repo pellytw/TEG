@@ -1,51 +1,217 @@
 <div class="page-header">
-  <h1>persona</h1>
+  <h1>Transporte Educativo Gratuito</h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt>Nombres:</dt>
-  <dd><%= @persona.nombres %></dd>
 
-  <dt>Apellidos:</dt>
-  <dd><%= @persona.apellidos %></dd>
+  <legend>Datos personales</legend>
 
-  <dt>Tipo documento:</dt>
-  <dd><%= @persona.tipo_documento %></dd>
+  <div class="row">
+    <div class="col-md-3">
+      <dt>Nombres:</dt>
+      <dd><%= @persona.nombres %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Apellidos:</dt>
+      <dd><%= @persona.apellidos %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Tipo documento:</dt>
+      <dd><%= @persona.tipo_documento %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Nro documento:</dt>
+      <dd><%= @persona.nro_documento %></dd>
+    </div>  
+  </div>
+  
+  <br/>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <dt>Calle:</dt>
+      <dd><%= @persona.calle %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Nro calle:</dt>
+      <dd><%= @persona.nro_calle %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Piso:</dt>
+      <dd><%= @persona.piso %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Depto:</dt>
+      <dd><%= @persona.depto %></dd>
+    </div>
+  </div>
 
-  <dt>Nro documento:</dt>
-  <dd><%= @persona.nro_documento %></dd>
+  <div class="row">
+    <div class="col-md-3">
+      <dt>Localidad:</dt>
+      <dd><%= @persona.localidad %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Estado civil:</dt>
+      <dd><%= @persona.estado_civil %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Sexo:</dt>
+      <dd><%= @persona.sexo %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Fecha nacimiento:</dt>
+      <dd><%= Util.fecha_a_es(@persona.fecha_nacimiento) %></dd>
+    </div>
+  </div>
 
-  <dt>Calle:</dt>
-  <dd><%= @persona.calle %></dd>
+  <br/>
 
-  <dt>Nro calle:</dt>
-  <dd><%= @persona.nro_calle %></dd>
+  <div class="row">
+    <div class="col-md-3">
+      <dt>Telefono contacto:</dt>
+      <dd><%= @persona.telefono_contacto %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Email:</dt>
+      <dd><%= @persona.email %></dd>
+    </div>
+  </div>
 
-  <dt>Piso:</dt>
-  <dd><%= @persona.piso %></dd>
+  <br/>
 
-  <dt>Depto:</dt>
-  <dd><%= @persona.depto %></dd>
+  <legend>Establecimientos y Transporte</legend>
+  <div class="row">
+    <div class="col-md-3">
+      <dt>Establecimientos:</dt>
+      <dd>
+        <% @persona.establecimientos.each do |pe| %>
+          <%= pe.codigo_jurisdiccional %> 
+        <% end %>
+      </dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Transporte:</dt>
+      <dd><%= @persona.servicio_transporte %></dd>
+    </div>
+  </div>
 
-  <dt>Estado civil:</dt>
-  <dd><%= @persona.estado_civil %></dd>
+  <br/>
 
-  <dt>Sexo:</dt>
-  <dd><%= @persona.sexo %></dd>
+  <% if @persona.rol == "Auxiliar de educación" then %>
 
-  <dt>Fecha nacimiento:</dt>
-  <dd><%= Util.fecha_a_es(@persona.fecha_nacimiento) %></dd>
+    <legend>Auxiliar de educación</legend>
+    <div class="row">
+      <div class="col-md-3">
+        <dt>Auxiliar Activo:</dt>
+        <dd>
+          <% if @persona.activo_pasivo_aux == true then %>
+            Si
+          <% else %>
+            No
+          <% end %>
+        </dd>
+      </div>
+      <div class="col-md-3">
+        <dt>Lugar de trabajo:</dt>
+        <dd><%= @persona.lugar_auxiliares %></dd>
+      </div>
+    </div>
 
-  <dt>Localidad:</dt>
-  <dd><%= @persona.localidad %></dd>
+    <br/>
 
-  <dt>Telefono contacto:</dt>
-  <dd><%= @persona.telefono_contacto %></dd>
+  <% end %>
 
-  <dt>Email:</dt>
-  <dd><%= @persona.email %></dd>
+  <% if @persona.rol == "Alumno" then %>
 
-  <br/><br/>
+    <legend>Alumno</legend>
+    <div class="row">
+      <div class="col-md-3">
+        <dt>Grado/año:</dt>
+        <dd><%= @persona.grado_anio_alumno %></dd>
+      </div>
+      <div class="col-md-3">
+        <dt>Alumno regular:</dt>
+        <dd>
+          <% if @persona.regular == true then %>
+            Si
+          <% else %>
+            No
+          <% end %>
+        </dd>
+      </div>
+    </div>
+
+    <br/>
+
+  <% end %>
+
+  <% if @persona.rol == "Docente" then %>
+
+    <legend>Docente</legend>
+    <div class="row">
+      <div class="col-md-3">
+        <dt>Docente activo:</dt>
+        <dd>
+          <% if @persona.activo_pasivo_docente == 1 then %>
+            Si
+          <% else %>
+            No
+          <% end %>
+        </dd>
+      </div>
+      <div class="col-md-3">
+        <dt>Frente a alumnos:</dt>
+        <dd>
+          <% if @persona.frente_alumnos == 1 then %>
+            Si
+          <% else %>
+            No
+          <% end %>
+        </dd>
+      </div>
+      <div class="col-md-3">
+        <dt>Grado:</dt>
+        <dd>
+          <% if @persona.grado_docente == 1 then %>
+            Si
+          <% else %>
+            No
+          <% end %>
+        </dd>
+      </div>
+      <div class="col-md-3">
+        <dt>Turno:</dt>
+        <dd>
+          <% if @persona.turno_docente == 1 then %>
+            Si
+          <% else %>
+            No
+          <% end %>
+        </dd>
+      </div>
+    </div>
+
+    <br/>
+
+  <% end %>
+
+  <legend>Distancia al establecimiento</legend>
+  <div class="row">
+    <div class="col-md-3">
+      <dt>Cantidad de cuadras:</dt>
+      <dd><%= @persona.cant_cuadras %></dd>
+    </div>
+    <div class="col-md-3">
+      <dt>Distancia en km:</dt>
+      <dd><%= @persona.distancia_km %></dd>
+    </div>
+  </div>
+
+  <br/></br></br>
+
+
+  
   <%= link_to personas_path, :class => 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Atrás
@@ -59,3 +225,7 @@
     Eliminar
   <% end %>
 </dl>
+
+
+
+

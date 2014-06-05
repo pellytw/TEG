@@ -103,7 +103,7 @@
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group hidden">
     <%= f.label :tipo_gestion_id, "Tipo de gestión", :class => "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%= f.collection_select(:tipo_gestion_id, TipoGestion.all, :id, :nombre) %>
@@ -203,8 +203,6 @@
       </div>
     </div>
   </fieldset>
-
-
 
   </br></br></br>
   <div class="form-group">
