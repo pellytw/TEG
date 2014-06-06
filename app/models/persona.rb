@@ -13,6 +13,15 @@ class Persona < ActiveRecord::Base
   belongs_to :tipo_documento
   belongs_to :tipo_gestion
 
+  validates :nombres, :apellidos, :fecha_nacimiento, :tramo, :presence => true
+  validates_length_of :nro_documento, :maximum => 8
+  validates_length_of :nro_documento, :minimum => 6
+  validates :nro_documento, :presence => true, uniqueness: true, :numericality => { :greater_than => 0 }
+  validates_numericality_of :nro_documento, :only_integer => true
+  validates :nro_calle, :numericality => { :greater_than => 0 }
+  #validates_numericality_of :nro_calle, :only_integer => true
+
+
   has_many :tramo, :dependent => :destroy
   attr_accessible :tramo_attributes
   accepts_nested_attributes_for :tramo, allow_destroy: true
