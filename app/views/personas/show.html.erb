@@ -206,6 +206,58 @@
     </div>
   </div>
 
+
+  <legend>Recorrido</legend>
+  <% @persona.tramo.each do |tramo| %>
+  <h4> <b> Tramo </b></h4> 
+    <div class="row">
+      <div class="col-md-3">
+        <dt>Origen</dt>
+        <dd><%= Localidad.find(tramo.localidad_origen_id) %></dd>
+      </div>
+      <div class="col-md-3">
+        <dt>Destino</dt>
+        <dd><%= Localidad.find(tramo.localidad_destino_id) %></dd>
+      </div>
+       <div class="col-md-3">
+        <dt>Empresa</dt>
+        <dd><%= tramo.empresa_transporte %></dd>
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-md-3">
+        <dt>Lunes</dt>
+        <dd><%= tramo.lunes_cant %></dd>
+      </div>
+      <div class="col-md-3">
+        <dt>Martes</dt>
+        <dd><%= tramo.martes_cant %></dd>
+      </div>
+       <div class="col-md-3">
+        <dt>Miercoles</dt>
+        <dd><%= tramo.miercoles_cant %></dd>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <dt>Jueves</dt>
+        <dd><%= tramo.jueves_cant %></dd>
+      </div>
+      <div class="col-md-3">
+        <dt>Viernes</dt>
+        <dd><%= tramo.viernes_cant %></dd>
+      </div>
+      <div class="col-md-3">
+        <dt>Sabado</dt>
+        <dd><%= tramo.sabado_cant %></dd>
+      </div>
+      <div class="col-md-3">
+        <dt>Domingo</dt>
+        <dd><%= tramo.domingo_cant %></dd>
+      </div>
+    </div>
+    <hr/>
+  <% end %>
   <br/></br></br>
 
   <div class="hidden-print">
