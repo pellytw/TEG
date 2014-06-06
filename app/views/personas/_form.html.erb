@@ -207,10 +207,63 @@
   <fieldset id="recorrido">
     <legend>Recorrido</legend>
     <%= f.fields_for :tramo do |t|%>
-      <div class="field"><b>Empresa</b></div> <%= t.collection_select(:empresa_transporte_id, EmpresaTransporte.all, :id, :nombre) %>
-      <div> <%= t.link_to_remove "ELIMINAR", :class => "label label-important" %></div>
-    <% end %>
-    <%= f.link_to_add "AGREGAR", :tramo, :class => "label label-success" %>
+      <p class="text-center"><b>Tramo</b></p><hr/>
+      <div class="form-group">
+        <%= t.label "Origen", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= t.collection_select(:localidad_origen_id, Localidad.all, :id, :nombre) %>
+        </div>
+        <%= t.label "Destino", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= t.collection_select(:localidad_destino_id, Localidad.all, :id, :nombre) %>
+        </div>        
+      </div>
+      <div class="form-group">
+        <%= t.label "Empresa", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= t.collection_select(:empresa_transporte_id, EmpresaTransporte.all, :id, :nombre) %>
+        </div>
+      </div>
+      <p class="text-center"><em>Ingrese la cantidad de pasajes diarios que necesita para este tramo.</em></p>
+      <div class="form-group">      
+        <%= t.label "Lun", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= t.text_field :lunes_cant, :class => "form-control" %>
+        </div>
+        <%= t.label "Mar", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= t.text_field :martes_cant, :class => "form-control" %>
+        </div>
+        <%= t.label "Mier", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= t.text_field :miercoles_cant, :class => "form-control" %>
+        </div>        
+      </div>
+      <div class="form-group">        
+        <%= t.label "Jue", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= t.text_field :jueves_cant, :class => "form-control" %>
+        </div>
+        <%= t.label "Vie", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= t.text_field :viernes_cant, :class => "form-control" %>
+        </div>
+        <%= t.label "Sab", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= t.text_field :sabado_cant, :class => "form-control" %>
+        </div>
+        <%= t.label "Dom", :class => "col-sm-2 control-label" %>
+        <div class="col-sm-1">
+          <%= t.text_field :domingo_cant, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">      
+        <div class="text-right">
+          <%= t.link_to_remove "Eliminar Tramo", :class => "label label-danger" %>  
+        </div>
+      </div>
+    <% end %>    
+    <%= f.link_to_add "Agregar Tramo", :tramo, :class => "label label-success" %><hr/>
   </fieldset>
 
   </br></br></br>

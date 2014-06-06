@@ -15,6 +15,7 @@
 //= require jquery.tokeninput
 //= require jquery_nested_form
 
+
 $(document).ready(
   function() {
     $("#persona_establecimiento_tokens").tokenInput("/establecimientos.json", {
