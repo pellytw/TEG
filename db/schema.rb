@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140605174855) do
+ActiveRecord::Schema.define(:version => 20140609123213) do
 
   create_table "empresa_transportes", :force => true do |t|
     t.string   "nombre"
@@ -167,13 +167,13 @@ ActiveRecord::Schema.define(:version => 20140605174855) do
     t.integer  "empresa_transporte_id"
     t.integer  "lunes_cant"
     t.integer  "martes_cant"
-    t.integer  "miercoles_cant"
+    t.integer  "miercoles_cant",        :default => 0
     t.integer  "jueves_cant"
     t.integer  "viernes_cant"
     t.integer  "sabado_cant"
     t.integer  "domingo_cant"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "user_roles", :force => true do |t|
@@ -198,8 +198,13 @@ ActiveRecord::Schema.define(:version => 20140605174855) do
     t.datetime "updated_at",                             :null => false
     t.string   "apellidos"
     t.string   "nombres"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
   end
 
+  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
