@@ -952,7 +952,43 @@ Establecimiento.create(	codigo_jurisdiccional:	"Z000024"	, cue:	2690002	, anexo:
 																																									
 
 
+#Carga de tipo de transporte
+TipoTransporte.create(nombre:"URBANO")
+TipoTransporte.create(nombre:"INTERURBANO")
+TipoTransporte.create(nombre:"MEDIA DISTANCIA")
+TipoTransporte.create(nombre:"LARGA DISTANCIA")
 
-
-
-
+#Carga de empresas de transporte
+#urbanas
+EmpresaTransporte.create(nombre:"BAHIA S.R.L.", localidad_id:50, tipo_transporte_id:1)
+EmpresaTransporte.create(nombre:"EL 22 S.R.L", localidad_id:59, tipo_transporte_id:1)
+EmpresaTransporte.create(nombre:"BENITEZ BELLINI S.A.", localidad_id:49, tipo_transporte_id:1)
+EmpresaTransporte.create(nombre:"PATAGONIA ARGENTINA S.R.L.", localidad_id:18, tipo_transporte_id:1)
+EmpresaTransporte.create(nombre:"DIADEMA S.A.", localidad_id:18, tipo_transporte_id:1)
+EmpresaTransporte.create(nombre:"SARGENTO CABRAL S.R.L.", localidad_id:32, tipo_transporte_id:1)
+EmpresaTransporte.create(nombre:"SANTIAGO ACEVEDO", localidad_id:32, tipo_transporte_id:1)
+EmpresaTransporte.create(nombre:"LA GOLONDRINA", localidad_id:40, tipo_transporte_id:1)
+#interurbanas
+EmpresaTransporte.create(nombre:"BAHIA", localidad_id:50, tipo_transporte_id:2)
+EmpresaTransporte.create(nombre:"JACOBSEN S.R.L", localidad_id:32, tipo_transporte_id:2)
+EmpresaTransporte.create(nombre:"EXPRESO RADA TILLY S.R.L.", localidad_id:32, tipo_transporte_id:2)
+EmpresaTransporte.create(nombre:"RAWSON S.R.L.", localidad_id:50, tipo_transporte_id:2)
+EmpresaTransporte.create(nombre:"TRANSPORTES BAHIA S.R.L.", localidad_id:50, tipo_transporte_id:2)
+EmpresaTransporte.create(nombre:"28 DE JULIO S.C.T.T.L.", localidad_id:59, tipo_transporte_id:2)
+EmpresaTransporte.create(nombre:"CEFERINO S.R.L.", localidad_id:59, tipo_transporte_id:2)
+EmpresaTransporte.create(nombre:"FOX BUS", localidad_id:49, tipo_transporte_id:2)
+#media distancia
+EmpresaTransporte.create(nombre:"MAR Y SOL", localidad_id:16, tipo_transporte_id:3)
+EmpresaTransporte.create(nombre:"LA GOLONDRINA", localidad_id:40, tipo_transporte_id:3)
+EmpresaTransporte.create(nombre:"ROBERTO ITURBURU", localidad_id:32, tipo_transporte_id:3)
+EmpresaTransporte.create(nombre:"ESQUEL", localidad_id:32, tipo_transporte_id:3)
+EmpresaTransporte.create(nombre:"JACOBSEN S.R.L", localidad_id:32, tipo_transporte_id:3
+EmpresaTransporte.create(nombre:"PARALELO 42°", localidad_id:40, tipo_transporte_id:3)
+EmpresaTransporte.create(nombre:"LA COMARCAL", localidad_id:40, tipo_transporte_id:3)
+EmpresaTransporte.create(nombre:"28 DE JULIO S.C.T.T.L.", localidad_id:59, tipo_transporte_id:3)
+#larga distancia
+EmpresaTransporte.create(nombre:"DON OTTO", tipo_transporte_id:4)
+EmpresaTransporte.create(nombre:"MAR Y VALLE S.R.L.", tipo_transporte_id:4)
+EmpresaTransporte.create(nombre:"ETAP S.R.L.", tipo_transporte_id:4)
+EmpresaTransporte.create(nombre:"EL ÑANDU", tipo_transporte_id:4)
+EmpresaTransporte.create(nombre:"TRANSPORTADORA PATAGÓNICA", tipo_transporte_id:4)
