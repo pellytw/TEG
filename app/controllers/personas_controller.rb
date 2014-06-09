@@ -46,6 +46,7 @@ class PersonasController < ApplicationController
     #acá vemos si el usuario puede registrarse en el boleto. Para eso debe tener el rol user
     if (current_user.role? :user) then
       @persona.user_id = current_user.id
+      debugger
       respond_to do |format|
         if @persona.save
           format.html { redirect_to @persona, notice: 'Se ha registrado correctamente. Para finalizar su registro debe confirmar su cuenta de correo.' }

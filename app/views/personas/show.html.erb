@@ -83,8 +83,8 @@
     <div class="col-md-3">
       <dt>Establecimientos:</dt>
       <dd>
-        <% @persona.establecimientos.each do |pe| %>
-          <%= pe.codigo_jurisdiccional %> 
+        <% @persona.persona_establecimiento.each do |pe| %>
+          <%= pe.establecimiento.codigo_jurisdiccional %> 
         <% end %>
       </dd>
     </div>
