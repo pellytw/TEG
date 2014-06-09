@@ -48,7 +48,7 @@ class PersonasController < ApplicationController
       @persona.user_id = current_user.id
       respond_to do |format|
         if @persona.save
-          format.html { redirect_to @persona, notice: 'Se ha registrado correctamente.' }
+          format.html { redirect_to @persona, notice: 'Se ha registrado correctamente. Para finalizar su registro debe confirmar su cuenta de correo.' }
           format.json { render json: @persona, status: :created, location: @persona }
         else
           format.html { render action: "new" }

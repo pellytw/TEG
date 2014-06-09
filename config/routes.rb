@@ -1,4 +1,6 @@
 Mysecurity::Application.routes.draw do
+  resources :tipo_transportes
+
   resources :tramos
 
   resources :empresa_transportes
