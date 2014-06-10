@@ -101,7 +101,7 @@
     <%= f.fields_for :persona_establecimiento do |pe|%>
      
       <div class="form-group">  
-        <%= pe.collection_select(:establecimiento_id, Establecimiento.all, :id, :nombre) %> 
+        <%= pe.collection_select(:establecimiento_id, Establecimiento.all, :id, :to_s) %> 
         <div class="text-right">
           <%= pe.link_to_remove "Eliminar establecimiento", :class => "label label-danger" %>  
         </div>

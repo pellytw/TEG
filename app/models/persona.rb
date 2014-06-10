@@ -31,7 +31,7 @@ class Persona < ActiveRecord::Base
   accepts_nested_attributes_for :persona_establecimiento, allow_destroy: true
 
   def to_s
-  	"#{ self.nombres } + #{ self.apellidos }"
+  	"#{ self.nombres } - #{ self.apellidos }"
   end
 
   #attr_accessible :persona_establecimientos_attributes
