@@ -263,6 +263,30 @@
     </div>
     <hr/>
   <% end %>
+
+  <legend>Datos establecimiento educativo</legend>
+  <% @persona.persona_establecimiento.each do |establecimiento| %>
+  <h4> <b> Establecimiento </b></h4> <hr>
+    <div class="row">
+      <div class="col-md-5">
+        <dt>Nombre del Establecimiento</dt>
+        <dd><%= Establecimiento.find(establecimiento.establecimiento_id) %></dd>
+      </div>
+    </div>
+    </br>
+    <div class="row">
+      <div class="col-md-6">
+        <dt>Cantidad de cuadras al establecimiento</dt>
+        <dd><%= establecimiento.cant_cuadras %></dd>
+      </div>
+      <div class="col-md-6">
+        <dt>Cantidad de kilómetros al establecimiento</dt>
+        <dd><%= establecimiento.cant_km %> km</dd>
+      </div>
+    </div>
+    <hr/>
+  <% end %>
+
   <br/></br></br>
 
   <div class="hidden-print">

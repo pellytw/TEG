@@ -176,13 +176,13 @@ ActiveRecord::Schema.define(:version => 20140610114124) do
     t.integer  "empresa_transporte_id"
     t.integer  "lunes_cant"
     t.integer  "martes_cant"
-    t.integer  "miercoles_cant"
+    t.integer  "miercoles_cant",        :default => 0
     t.integer  "jueves_cant"
     t.integer  "viernes_cant"
     t.integer  "sabado_cant"
     t.integer  "domingo_cant"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "user_roles", :force => true do |t|

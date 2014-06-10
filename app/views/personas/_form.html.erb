@@ -99,26 +99,30 @@
   <div class="form-group">
     
     <%= f.fields_for :persona_establecimiento do |pe|%>
-     
+      <p class="text-center"><b>Establecimiento</b></p><hr/>
       <div class="form-group"> 
-        <%= f.label "Establecimiento", :class => "col-sm-2 control-label" %>
+        <%= f.label "Nombre del Establecimiento", :class => "col-sm-2 control-label" %>
         <div class="col-sm-4"> 
           <%= pe.collection_select(:establecimiento_id, Establecimiento.all, :id, :to_s) %>           
         </div>
       </div>
       <div class="form-group">
         <%= pe.label :cant_cuadras, "Cantidad de cuadras al establecimiento", :class => "col-sm-2 control-label" %>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <%= pe.text_field :cant_cuadras, :class => "form-control" %>
         </div>
         <%= pe.label :cant_km, "Cantidad de kilómetros al establecimiento", :class => "col-sm-2 control-label" %>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <%= pe.text_field :cant_km, :class => "form-control" %>
-        </div>      
-        <div class="text-right">
-          <%= pe.link_to_remove "Eliminar", :class => "label label-danger" %>  
+          <br>
         </div>
-      </div><hr/>
+        <div class="form-group">      
+          <div class="text-right">
+            <%= pe.link_to_remove "Eliminar", :class => "label label-danger" %>  
+          </div>
+        </div>      
+        
+      </div>
     <% end %>    
     <%= f.link_to_add "Agregar establecimiento", :persona_establecimiento, :class => "label label-success" %><hr/>
   </div>

@@ -1,5 +1,5 @@
 class AgregarTipoTransporteAEmpresaTransporte < ActiveRecord::Migration
-   ef up
+  def up
   	add_column :empresa_transportes, :tipo_transporte_id, :integer
   end
 
