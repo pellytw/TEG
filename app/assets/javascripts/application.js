@@ -14,7 +14,6 @@
 //= require jquery-ui
 //= require jquery-ui-timepicker-addon.js
 //= require jquery.tokeninput
-//= require jquery_nested_form
 
 
 $(document).ready(

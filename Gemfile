@@ -34,7 +34,7 @@ gem 'jquery-rails', "2.3.0"
 
 gem "jquery-ui-themes"
 
-gem "nested_form"
+#gem "nested_form"
 
 gem "rails3-jquery-autocomplete"
 

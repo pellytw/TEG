@@ -226,7 +226,6 @@ DEPENDENCIES
   less-rails
   mysql
   mysql2
-  nested_form
   rails (= 3.2.8)
   rails3-jquery-autocomplete
   rails_admin
