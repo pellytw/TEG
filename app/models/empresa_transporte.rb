@@ -9,6 +9,6 @@ class EmpresaTransporte < ActiveRecord::Base
   has_many :tramo
 
   def to_s
-  	"#{ self.nombre } - #{ self.localidad }"
+  	"#{ self.nombre } - #{ self.localidad } - #{ self.tipo_transporte }"
   end
 end
