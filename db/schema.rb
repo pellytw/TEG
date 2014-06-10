@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(:version => 20140610140652) do
     t.integer  "establecimiento_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "cant_cuadras"
+    t.integer  "cant_km"
   end
 
   create_table "personas", :force => true do |t|

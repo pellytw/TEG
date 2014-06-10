@@ -1029,7 +1029,7 @@ EmpresaTransporte.create(nombre:"MAR Y SOL", localidad_id:16, tipo_transporte_id
 EmpresaTransporte.create(nombre:"LA GOLONDRINA", localidad_id:40, tipo_transporte_id:3)
 EmpresaTransporte.create(nombre:"ROBERTO ITURBURU", localidad_id:32, tipo_transporte_id:3)
 EmpresaTransporte.create(nombre:"ESQUEL", localidad_id:32, tipo_transporte_id:3)
-EmpresaTransporte.create(nombre:"JACOBSEN S.R.L", localidad_id:32, tipo_transporte_id:3
+EmpresaTransporte.create(nombre:"JACOBSEN S.R.L", localidad_id:32, tipo_transporte_id:3)
 EmpresaTransporte.create(nombre:"PARALELO 42°", localidad_id:40, tipo_transporte_id:3)
 EmpresaTransporte.create(nombre:"LA COMARCAL", localidad_id:40, tipo_transporte_id:3)
 EmpresaTransporte.create(nombre:"28 DE JULIO S.C.T.T.L.", localidad_id:59, tipo_transporte_id:3)

@@ -28,21 +28,25 @@ class Persona < ActiveRecord::Base
   attr_accessible :tramo_attributes
   accepts_nested_attributes_for :tramo, allow_destroy: true
 
+  has_many :persona_establecimiento, :dependent => :destroy
+  attr_accessible :persona_establecimiento_attributes
+  accepts_nested_attributes_for :persona_establecimiento, allow_destroy: true
+
   def to_s
   	"#{ self.apellidos }, #{ self.nombres } - #{ self.nro_documento }"
   end
 
-  attr_accessible :persona_establecimientos_attributes
-  attr_accessible :persona_attributes
+  #attr_accessible :persona_establecimientos_attributes
+  #attr_accessible :persona_attributes
 
-  attr_accessible :establecimiento_tokens
-  has_many :persona_establecimiento, :dependent => :destroy
-  has_many :establecimientos, :through => :persona_establecimiento
-  attr_reader :establecimiento_tokens
+  #attr_accessible :establecimiento_tokens
+  #has_many :persona_establecimiento, :dependent => :destroy
+  #has_many :establecimientos, :through => :persona_establecimiento
+  #attr_reader :establecimiento_tokens
 
 
-  def establecimiento_tokens=(ids)
-    self.establecimiento_ids = ids.split(",")
-  end
+  #def establecimiento_tokens=(ids)
+  #  self.establecimiento_ids = ids.split(",")
+  #end
 
 end
