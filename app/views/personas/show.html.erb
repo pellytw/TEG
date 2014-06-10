@@ -194,19 +194,6 @@
 
   <% end %>
 
-  <legend>Distancia al establecimiento</legend>
-  <div class="row">
-    <div class="col-md-3">
-      <dt>Cantidad de cuadras:</dt>
-      <dd><%= @persona.cant_cuadras %></dd>
-    </div>
-    <div class="col-md-3">
-      <dt>Distancia en km:</dt>
-      <dd><%= @persona.distancia_km %></dd>
-    </div>
-  </div>
-
-
   <legend>Recorrido</legend>
   <% @persona.tramo.each do |tramo| %>
   <h4> <b> Tramo </b></h4> 
