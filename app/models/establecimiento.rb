@@ -4,7 +4,7 @@ class Establecimiento < ActiveRecord::Base
   has_many :persona_establecimientos
   has_many :personas, :through => :persona_establecimientos
   def to_s
-  	"#{ self.codigo_jurisdiccional } + #{ self.nombre }"
+  	"#{ self.codigo_jurisdiccional } - #{ self.nombre }"
   end
   
 end
