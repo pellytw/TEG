@@ -5,6 +5,7 @@ class Persona < ActiveRecord::Base
   attr_accessible :user_id
 
   has_one :user
+  has_many :bono
 
   belongs_to :estado_civil
   belongs_to :localidad
@@ -12,6 +13,7 @@ class Persona < ActiveRecord::Base
   belongs_to :situacion_revistum
   belongs_to :tipo_documento
   belongs_to :tipo_gestion
+
 
   validates :nombres, :apellidos, :fecha_nacimiento, :tramo, :presence => true
   validates_length_of :nro_documento, :maximum => 8
@@ -27,7 +29,7 @@ class Persona < ActiveRecord::Base
   accepts_nested_attributes_for :tramo, allow_destroy: true
 
   def to_s
-  	"#{ self.nombres } + #{ self.apellidos }"
+  	"#{ self.apellidos }, #{ self.nombres } - #{ self.nro_documento }"
   end
 
   attr_accessible :persona_establecimientos_attributes

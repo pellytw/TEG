@@ -44,7 +44,7 @@ class EmpresaTransportesController < ApplicationController
 
     respond_to do |format|
       if @empresa_transporte.save
-        format.html { redirect_to @empresa_transporte, notice: 'Empresa transporte was successfully created.' }
+        format.html { redirect_to @empresa_transporte, notice: 'Empresa transporte creada correctamente.' }
         format.json { render json: @empresa_transporte, status: :created, location: @empresa_transporte }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class EmpresaTransportesController < ApplicationController
 
     respond_to do |format|
       if @empresa_transporte.update_attributes(params[:empresa_transporte])
-        format.html { redirect_to @empresa_transporte, notice: 'Empresa transporte was successfully updated.' }
+        format.html { redirect_to @empresa_transporte, notice: 'Empresa transporte actualizada correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

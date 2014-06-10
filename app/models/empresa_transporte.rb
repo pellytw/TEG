@@ -5,9 +5,10 @@ class EmpresaTransporte < ActiveRecord::Base
   belongs_to :localidad
   belongs_to :tipo_transporte 
 
+  has_many :bono
   has_many :tramo
 
   def to_s
-  	"#{ self.nombre }"
+  	"#{ self.nombre } - #{ self.localidad }"
   end
 end

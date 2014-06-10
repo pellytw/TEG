@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>bono</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Nro bono:</dt>
+  <dd><%= @bono.nro_bono %></dd>
+
+  <dt>Empresa:</dt>
+  <dd><%= @bono.empresa_transporte_id %></dd>
+
+  <dt>Persona:</dt>
+  <dd><%= @bono.persona_id %></dd>
+
+  <dt>Cant pasajes:</dt>
+  <dd><%= @bono.cant_pasajes %></dd>
+
+  <dt>Fecha emision:</dt>
+  <dd><%= @bono.fecha_emision %></dd>
+
+  <dt>Fecha entregado:</dt>
+  <dd><%= @bono.fecha_entregado %></dd>
+
+  <dt>Descripcion:</dt>
+  <dd><%= @bono.descripcion %></dd>
+
+  <dt>Entregado:</dt>
+  <dd><%= @bono.entregado %></dd>
+
+  <dt>Emisor:</dt>
+  <dd><%= @bono.emisor %></dd>
+
+  <br/><br/>
+  <%= link_to bonos_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Atrás
+  <% end %>
+  <%= link_to edit_bono_path(@bono), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Editar
+  <% end %>
+  <%= link_to bono_path(@bono), method: :delete, data: { confirm: '¿Seguro desea eliminar?' }, :class => 'btn btn-danger' do%>
+    <span class="glyphicon glyphicon-trash"></span>
+    Eliminar
+  <% end %>
+</dl>

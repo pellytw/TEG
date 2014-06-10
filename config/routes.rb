@@ -1,4 +1,10 @@
 Mysecurity::Application.routes.draw do
+  resources :bonos
+
+  #get "bonos/entrega/?id"
+
+  get 'bonos/entrega/:id', to: 'bonos#entrega'
+
   resources :tipo_transportes
 
   resources :tramos

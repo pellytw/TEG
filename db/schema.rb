@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140609133543) do
+ActiveRecord::Schema.define(:version => 20140610140652) do
+
+  create_table "bonos", :force => true do |t|
+    t.string   "nro_bono"
+    t.integer  "empresa_transporte_id"
+    t.integer  "persona_id"
+    t.integer  "cant_pasajes"
+    t.datetime "fecha_emision"
+    t.datetime "fecha_entregado"
+    t.string   "descripcion"
+    t.boolean  "entregado"
+    t.integer  "emisor"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
 
   create_table "empresa_transportes", :force => true do |t|
     t.string   "nombre"

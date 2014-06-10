@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids, :apellidos, :nombres
   
   def to_s
-    "#{ self.nombres } + #{ self.apellidos }"
+    "#{ self.email }"
   end
 
 

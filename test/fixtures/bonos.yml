@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nro_bono: MyString
+  empresa_id: 1
+  persona_id: 1
+  cant_pasajes: 1
+  fecha_emision: 2014-06-09 14:34:39
+  fecha_entregado: 2014-06-09 14:34:39
+  descripcion: MyString
+  entregado: false
+  emisor: 1
+
+two:
+  nro_bono: MyString
+  empresa_id: 1
+  persona_id: 1
+  cant_pasajes: 1
+  fecha_emision: 2014-06-09 14:34:39
+  fecha_entregado: 2014-06-09 14:34:39
+  descripcion: MyString
+  entregado: false
+  emisor: 1

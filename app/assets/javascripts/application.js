@@ -6,6 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require select2
 //= require twitter/bootstrap
 //= require allPages
 //= require dataTables/jquery.dataTables

@@ -53,3 +53,5 @@ gem 'kaminari'
 gem 'rails_admin'
 
 gem 'rails_tokeninput'
+
+gem "select2-rails"

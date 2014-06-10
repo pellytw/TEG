@@ -1,0 +1,84 @@
+<%= stylesheet_link_tag 'select2' %>
+<%= javascript_include_tag 'select2' %>
+<script>
+  $(document).ready(function() { $("#bono_persona_id").select2(); });
+  $(document).ready(function() { $("#bono_empresa_id").select2(); });
+</script>
+
+<%= form_for(@bono, :html => { :class => "form-horizontal" }) do |f| %>
+  <% if @bono.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4>No se pudo guardar el formulario, tiene los siguientes errores:</h4>
+
+      <ul>
+      <% @bono.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :persona_id, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.collection_select(:persona_id, Persona.all, :id, :to_s, {:class=>'form-control'},:style=>"width:100%")%>
+    </div>
+    <%= f.label :empresa_id, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.collection_select(:empresa_transporte_id, EmpresaTransporte.all, :id, :to_s, {:class=>'form-control'},:style=>"width:100%")%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Número de bono", :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :nro_bono, :class => "form-control" %>
+    </div>
+    <%= f.label "Cantidad de pasajes", :class => "col-sm-2 control-label" %>
+    <div class="col-sm-4">
+      <%= f.text_field :cant_pasajes, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label "Descripción", :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :descripcion, :class => "form-control" %>
+    </div>
+  </div>
+<!--   <div class="form-group">
+    <%= f.label :fecha_emision, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.datetime_select :fecha_emision, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fecha_entregado, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.datetime_select :fecha_entregado, :class => "form-control" %>
+    </div>
+  </div> -->
+
+<!--   <div class="form-group">
+    <%= f.label :entregado, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.check_box :entregado %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :emisor, :class => "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :emisor, :class => "form-control" %>
+    </div>
+  </div> -->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+
+      <%= f.submit :class => "btn btn-primary", :value => "Guardar" %>
+      <%= link_to bonos_path, :class => 'btn btn-default' do %>
+        <span class="glyphicon glyphicon-list-alt"></span>
+        Atrás
+      <% end %>
+    </div>
+  </div>
+<% end %>
