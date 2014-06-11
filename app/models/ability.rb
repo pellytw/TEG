@@ -14,7 +14,7 @@ class Ability
          	can :create, [Persona]
          	can :update, [Persona]
          	can :read, [Persona]
-         	can :read, [Establecimiento]
+         	#can :read, [Establecimiento]
        	end
      	else
      		raise CanCan::AccessDenied.new("Debe registrar su mail!")	
